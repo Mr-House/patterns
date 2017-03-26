@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+
+    var fn;
+    /*function foo() {
+        var a = 2;
+        function innerFoo() {
+            console.log(a);
+        }
+        fn = innerFoo;
+    }
+
+    function bar() {
+        fn();
+    }
+
+    foo();
+    bar();*/
+    function test() {
+        for (var i = 1; i <= 5; i++) {
+            function innerTest() {
+                var j = i;
+                /*function timer() {
+                    console.log(j);
+                }
+                setTimeout(timer(), i * 1000);*/
+                setTimeout(function () {
+                    console.log(j);
+                }, i * 1000);
+            }
+            fn = innerTest();
+        }
+    }
+    test();
+</script>
+<body>
+
+</body>
+</html>
